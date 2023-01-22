@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
 
         //Check update movement based on input
         Vector2 vel = new Vector2(0, rb2d.velocity.y);
+      
 
         if (xAxis < 0)
         {

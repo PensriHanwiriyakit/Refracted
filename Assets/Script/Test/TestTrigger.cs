@@ -4,24 +4,21 @@ using UnityEngine;
 
 public class TestTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject ghost;
+    private void Start()
     {
-        EventManager.instance.TestEvent += TestDialogue;
+        EventManager.instance.TestEvent += Spring;
     }
 
-    // Update is called once per frame
-    void Update()
+    void Spring()
     {
-        
+        ghost.SetActive(true);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         EventManager.instance.StartTestEvent();
     }
 
-    void TestDialogue()
-    {
-        Debug.Log("tested");
-    }
+  
+   
 }

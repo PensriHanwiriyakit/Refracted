@@ -7,6 +7,9 @@ public class EventManager : MonoBehaviour
     public static EventManager instance;
 
     public event Action TestEvent;
+    public event Action TestInteraction;
+
+
 
     //event manager will act as a middle man  
     // receive trigger from something then activated all event within that triggered event
@@ -21,19 +24,15 @@ public class EventManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-
-    }
-
+   
     public void StartTestEvent()
     {
         TestEvent?.Invoke();
+    }
+
+    public void StartTestInteraction()
+    {
+        TestInteraction?.Invoke();
     }
 
 
